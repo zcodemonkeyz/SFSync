@@ -1,0 +1,98 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red28\green0\blue207;\red196\green26\blue22;}
+\margl1440\margr1440\vieww14040\viewh12040\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 MsgBox "Error Type: " + app.Error.ErrorType + EndOfLine + "Error code: " + str(app.Error.ErrorCode) + EndOfLine + app.Error.ErrorMessage\
+\
+Multiple Sync Folder Definitions\
+Active Sync Folder Definition to execute\
+Job scheduler for each definition\
+History of each definition containing\
+- Summary log\
+- Detail sync log\
+\
+Log tab viewer should show:\
+- Active Definition summary and detail log\
+- Ability to clear (delete actual log)\
+- two pane list view & log view\
+\
+To Dos:\
+======\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0 - database interaction\CocoaLigature1 \
+\CocoaLigature0 - preferences (log location, cleaning the logs, hide on start)\CocoaLigature1 \
+\CocoaLigature0 - processing rsync commands\CocoaLigature1 \
+\CocoaLigature0 - remote server entry \'93mustafahajjar@\cf2 192.168.100.20\cf0 :/Volumes/Backup/"\
+\CocoaLigature1 - rsync version on app start\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 - options:\CocoaLigature0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 	-avz --progress --exclude=\cf3 '.DS*'\cf0  --exclude \cf3 '._*'\cf0  --log-file=[<loglocation>/date+time_taskid.log]\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 	--delete --force	\
+	delete extraneous files/folders from destination\
+\
+	--stats\
+	print statistics on transferred files after each job task (definition execution)\
+\
+- status menu items\
+\CocoaLigature1 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Future To Dos:\
+============\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0 - certificate generation instructions for remote servers (note + instructions url)\
+- parallel processing multiple jobs at the same time\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 Done:\
+=====\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0 - interface\CocoaLigature1 \
+\CocoaLigature0 \
+\
+Guide:\
+=======\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f2\b \cf0 Main Window
+\f1\b0 : is the main application window and is comprised of 4 tabs\
+- Summary tab: displays actively running job and scheduled jobs to run\
+- Definitions tab: displays the sync source and destination definitions\
+- Jobs tab: displays the jobs schedule of definitions to execute\
+- History tab: displays the list of jobs that ran in the past\
+\
+
+\f2\b Definitions Window
+\f1\b0 : is accessible from the Definitions tab of the Main Window through the (+/-/Edit) buttons to manipulate definitions.  You can add/delete/edit definitions including their name or label, source and destination folders including their remote attributes, and sync options.  Sync options include forcing deletion of destination files and folders, outputting additional statistics information to the log, and including any native RSYNC options.\
+\
+
+\f2\b Job Window:
+\f1\b0  is accessible from the Jobs tab of the Main Window through the (+/-/Edit_ buttons to manipulate jobs.  A job contains multiple sync tasks and each task is comprised of a single definition to be executed at the defined schedule.\
+\
+
+\f2\b Preferences Window
+\f1\b0 : displays setting for SFSync.  This includes:\
+1- General settings such as rsync logs location, clearing rsync logs, \
+2- Defined shared folders including their access credentials\
+3- Certification creation for remote folders to be used for remote folders in Definitions\
+\
+
+\f2\b Log Events:
+\f1\b0  contains the log of all events including job events, task events, and sync log events.  Event \
+\
+Checks:\
+=======\
+- Check if a job or a task is already running prior to attempting to start it\
+}
